@@ -38,7 +38,7 @@ jobs:
         app-name: ${{ secrets.WEBSITE_NAME }}
         publish-profile: ${{ secrets.WEBSITE_PUBLISH_PROFILE }}
         working-directory: Source\Tailwind.Traders.Web
-        package: D:\${{ github.sha }} \out
+        package: D:\${{ github.sha }}\out
 
     
   
