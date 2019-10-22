@@ -30,7 +30,7 @@ jobs:
       shell: pwsh
       working-directory: Source\Tailwind.Traders.Web
       run: |
-        xcopy ClientApp\build\*.* D:\xx\out\ClientApp\build /Y /E
+        xcopy ClientApp\build\*.* D:\$Env:GITHUB_SHA\out\ClientApp\build /Y /E
         
     # deploy web app using publish profile credentials
     - uses: azure/webapps-deploy@v1
