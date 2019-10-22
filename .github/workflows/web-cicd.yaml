@@ -2,8 +2,8 @@ name: Tailwind Traders CI/CD
 
 on: 
   push:
-    paths:
-    - Source/Tailwind.Traders.Web/**
+#    paths:
+#    - Source/Tailwind.Traders.Web/**
     branches:
       - master    
 
