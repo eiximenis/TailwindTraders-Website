@@ -32,7 +32,6 @@ jobs:
       working-directory: Source\Tailwind.Traders.Web
       run: |
         xcopy ClientApp\build\*.* out\ClientApp\build /Y /E
-        ls .
         
     # deploy web app using publish profile credentials
     - uses: azure/webapps-deploy@v1
