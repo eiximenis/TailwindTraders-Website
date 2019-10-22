@@ -18,7 +18,8 @@ jobs:
       shell: pwsh
       run: |
         dotnet restore
-        dotnet publish -o out      
+        dotnet build --configuration Release
+        dotnet publish -o out -c Release     
     
     - name: npm install and build
       working-directory: Source\Tailwind.Traders.Web\ClientApp
@@ -31,11 +32,13 @@ jobs:
       working-directory: Source\Tailwind.Traders.Web
       run: |
         xcopy ClientApp\build\*.* out\ClientApp\build /Y /E
+        ls .
         
     # deploy web app using publish profile credentials
     - uses: azure/webapps-deploy@v1
       with: 
         app-name: ${{ secrets.WEBSITE_NAME }}
         publish-profile: ${{ secrets.WEBSITE_PUBLISH_PROFILE }}
-        working-directory: Source\Tailwind.Traders.Web\out
+        working-directory: Source\Tailwind.Traders.Web
+        package: .\out
   
