@@ -19,7 +19,7 @@ jobs:
       run: |
         dotnet restore
         dotnet build --configuration Release
-        dotnet publish -o out -c Release     
+        dotnet publish -o D:\xx\out -c Release     
     
     - name: npm install and build
       working-directory: Source\Tailwind.Traders.Web\ClientApp
@@ -40,5 +40,5 @@ jobs:
         app-name: ${{ secrets.WEBSITE_NAME }}
         publish-profile: ${{ secrets.WEBSITE_PUBLISH_PROFILE }}
         working-directory: Source\Tailwind.Traders.Web
-        package: .\out
+        package: D:\xx\out
   
